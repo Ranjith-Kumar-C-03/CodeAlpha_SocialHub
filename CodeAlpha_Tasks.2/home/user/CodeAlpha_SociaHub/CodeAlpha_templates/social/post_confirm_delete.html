@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Delete Post | MiniSocial{% endblock %}
+{% block content %}
+<section class="form-card">
+    <h1>Delete Post</h1>
+    <p>Are you sure you want to delete this post?</p>
+    <blockquote class="quote">{{ post.content }}</blockquote>
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn danger">Yes, Delete</button>
+        <a href="{% url 'profile' user.username %}" class="btn secondary">Cancel</a>
+    </form>
+</section>
+{% endblock %}

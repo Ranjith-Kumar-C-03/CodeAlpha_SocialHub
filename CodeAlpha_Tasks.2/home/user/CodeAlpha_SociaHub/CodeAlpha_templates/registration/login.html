@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Login | SocialHub{% endblock %}
+
+{% block content %}
+
+<div class="auth-card">
+
+<h1>Welcome Back 👋</h1>
+
+<p>Login to continue to SocialHub</p>
+
+<form method="post">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit" class="btn">
+Login
+</button>
+
+</form>
+
+<p style="margin-top:25px;">
+Don't have an account?
+<a href="{% url 'register' %}">Create Account</a>
+</p>
+
+</div>
+
+{% endblock %}
